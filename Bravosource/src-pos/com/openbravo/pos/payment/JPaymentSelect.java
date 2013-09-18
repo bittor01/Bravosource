@@ -313,7 +313,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         m_jLblTotalEuros1.setText(AppLocal.getIntString("label.totalcash")); // NOI18N
         jPanel4.add(m_jLblTotalEuros1);
 
-        m_jTotalEuros.setBackground(java.awt.Color.white);
         m_jTotalEuros.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jTotalEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
@@ -327,7 +326,6 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         m_jLblRemainingEuros.setText(AppLocal.getIntString("label.remainingcash")); // NOI18N
         jPanel6.add(m_jLblRemainingEuros);
 
-        m_jRemaininglEuros.setBackground(java.awt.Color.white);
         m_jRemaininglEuros.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         m_jRemaininglEuros.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         m_jRemaininglEuros.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(javax.swing.UIManager.getDefaults().getColor("Button.darkShadow")), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
@@ -374,11 +372,15 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         jPanel5.setLayout(new java.awt.BorderLayout());
 
         m_jButtonPrint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileprint.png"))); // NOI18N
-        m_jButtonPrint.setSelected(true);
         m_jButtonPrint.setFocusPainted(false);
         m_jButtonPrint.setFocusable(false);
         m_jButtonPrint.setMargin(new java.awt.Insets(8, 16, 8, 16));
         m_jButtonPrint.setRequestFocusEnabled(false);
+        m_jButtonPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                m_jButtonPrintActionPerformed(evt);
+            }
+        });
         jPanel2.add(m_jButtonPrint);
         jPanel2.add(jPanel1);
 
@@ -412,8 +414,8 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
 
         getContentPane().add(jPanel5, java.awt.BorderLayout.SOUTH);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-672)/2, (screenSize.height-497)/2, 672, 497);
+        setSize(new java.awt.Dimension(672, 497));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void m_jButtonRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonRemoveActionPerformed
@@ -457,6 +459,10 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         dispose();
         
     }//GEN-LAST:event_m_jButtonCancelActionPerformed
+
+    private void m_jButtonPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jButtonPrintActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_m_jButtonPrintActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
